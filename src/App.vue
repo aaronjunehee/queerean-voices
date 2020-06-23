@@ -1,14 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav-bar></nav-bar>
     <router-view />
   </div>
 </template>
 
-<style>
+<script>
+import NavBar from "@/components/NavBar";
+export default {
+  name: "app",
+  components: {
+    NavBar
+  }
+};
+</script>
+
+<style lang="scss">
+@import "./styles/setup.scss";
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

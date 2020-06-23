@@ -37,6 +37,9 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  position: fixed;
 }
 .logo-container {
   display: flex;

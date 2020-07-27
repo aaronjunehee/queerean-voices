@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  props: ['color'],
+  props: ["color"],
   data: function() {
     return {
       show: false
@@ -29,7 +29,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 :root {
-  --accordioncolorcolor: #00ADEE;
+  --accordioncolorcolor: #00adee;
 }
 .wrapper {
   margin: 0 auto;
@@ -93,7 +93,7 @@ export default {
   .events {
     display: flex;
     justify-content: space-around;
-  } 
+  }
   .event {
     cursor: pointer;
     text-decoration: none;
@@ -147,7 +147,56 @@ export default {
 
   .vision,
   .statement {
-    padding: 100px 0;
+    padding: 70px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      font-size: 3rem;
+      text-align: center;
+      padding-bottom: 35px;
+    }
+    div:first-of-type {
+      padding-bottom: 120px;
+    }
+  }
+
+  .objectives-and-values {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 500px;
+    // .content-container {
+    //   max-width: 500px;
+    // }
+    .content-container:first-of-type {
+      margin-bottom: 30px;
+    }
+    .content-container:nth-of-type(2) {
+      .list-container {
+        column-count: 3;
+        column-gap: 40px;
+      }
+    }
+    .title {
+      color: black;
+      text-transform: capitalize;
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      // text-align: center;
+    }
+    .list-container {
+      font-family: Arial, Helvetica, sans-serif;
+      list-style-type: circle;
+      list-style-position: inside;
+      text-indent: -1.4em;
+      padding-left: 1.4em;
+      font-size: 1.1rem;
+    }
+    .list-item {
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
   }
   blockquote {
     p {
@@ -156,6 +205,7 @@ export default {
       color: black;
       font-size: 1.5rem;
       text-align: center;
+      font-family: "Arial";
     }
     p:after, p:before {
       color: rgba(122, 122, 122, 0.199);

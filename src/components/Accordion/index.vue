@@ -41,11 +41,16 @@
           </div>
 
           <div v-if="index === 3" class="wrapper objectives-and-values">
-            <div v-for="(content, title) in accordion.content" :key="title" class="content-container">
-              <h2 class="title">{{ title }}</h2>
-              <ul class="list-container">
-                <li v-for="(listItem, index) in content" :key="index" class="list-item">{{ listItem }}</li>
-              </ul>
+            <div v-for="(content, index) in accordion.content" :key="index" class="content-container">
+              <div class="copy-container">
+                <h2 class="title">{{ content.title }}</h2>
+                <ul class="list-container">
+                  <li v-for="(listItem, index) in content.copy" :key="index" class="list-item">{{ listItem }}</li>
+                </ul>
+              </div>
+              <div class="image-container">
+                <img :src="content.image" alt="">
+              </div>
             </div>
           </div>
 
@@ -112,17 +117,25 @@ export default {
         },
         {
           title: "Our Objectives and Values",
-          content: {
-            objectives: [
-              "To be informed on the needs of LGBTQ KC youth and their parents.",
-              "To always consider safety for any participants involved in any of our activities.",
-              "To build a sense of community for LGBTQ KC, families, friends, supporters and allies.",
-              "To engage and share expertise/resources with community partner organizations within diverse communities (LGBTQ, KC, Asian, community groups, youth groups, etc.)"
-            ],
-            values: [
-              "Safety", "Inclusion", "Acceptance", "Empowerment", "Respect", "Courage", "Collaboration", "Freedom", "Solidarity", "Advocacy"
-            ],
-          },
+          content: [
+            {
+              title: "Objectives",
+              copy: [
+                "To be informed on the needs of LGBTQ KC youth and their parents.",
+                "To always consider safety for any participants involved in any of our activities.",
+                "To build a sense of community for LGBTQ KC, families, friends, supporters and allies.",
+                "To engage and share expertise/resources with community partner organizations within diverse communities (LGBTQ, KC, Asian, community groups, youth groups, etc.)"
+              ],
+              image: require("@/assets/objective-picture.png")
+            },
+            {
+              title: "Values",
+              copy: [
+                "Safety", "Inclusion", "Acceptance", "Empowerment", "Respect", "Courage", "Collaboration", "Freedom", "Solidarity", "Advocacy"
+              ],
+              image: require("@/assets/value-picture.png")
+            },
+          ],
           color: "#1EB7BF"
         },
         {

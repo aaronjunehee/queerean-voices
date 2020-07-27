@@ -164,15 +164,33 @@ export default {
   .objectives-and-values {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    max-width: 500px;
-    // .content-container {
-    //   max-width: 500px;
-    // }
+    // align-items: flex-start;
+    // max-width: 500px;
+    .content-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .image-container,
+      .copy-container {
+        max-width: 600px;
+        width: 600px;
+      }
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          display: block;
+          padding: 0;
+          min-height: 300px;
+        }
+      }
+    }
     .content-container:first-of-type {
       margin-bottom: 30px;
     }
     .content-container:nth-of-type(2) {
+      flex-direction: row-reverse;
       .list-container {
         column-count: 3;
         column-gap: 40px;
@@ -181,17 +199,22 @@ export default {
     .title {
       color: black;
       text-transform: capitalize;
+      text-align: center;
       font-size: 2.6rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       // text-align: center;
+    }
+    .copy-container {
+      // border: 1px solid black;
+      padding: 25px;
     }
     .list-container {
       font-family: Arial, Helvetica, sans-serif;
       list-style-type: circle;
       list-style-position: inside;
-      text-indent: -1.4em;
-      padding-left: 1.4em;
-      font-size: 1.1rem;
+      text-indent: -1em;
+      padding-left: 1em;
+      font-size: 1.2rem;
     }
     .list-item {
       margin-bottom: 8px;

@@ -25,10 +25,28 @@
             </a>
           </div>
 
-          <div v-if="index === 2 || index === 3" class="wrapper vision statement">
-            <blockquote>
-              <p>{{ accordion.text }}</p>
-            </blockquote>
+          <div v-if="index === 2" class="wrapper vision statement">
+            <div>
+              <h2>{{ accordion.visionTitle}}</h2>
+              <blockquote>
+                <p>{{ accordion.visionText }}</p>
+              </blockquote>
+            </div>
+            <div>
+              <h2>{{ accordion.missionTitle }}</h2>
+              <blockquote>
+                <p>{{ accordion.missionText }}</p>
+              </blockquote>
+            </div>
+          </div>
+
+          <div v-if="index === 3" class="wrapper objectives-and-values">
+            <div v-for="(content, title) in accordion.content" :key="title" class="content-container">
+              <h2 class="title">{{ title }}</h2>
+              <ul class="list-container">
+                <li v-for="(listItem, index) in content" :key="index" class="list-item">{{ listItem }}</li>
+              </ul>
+            </div>
           </div>
 
           <div v-if="index === 4" class="wrapper partners">
@@ -62,7 +80,7 @@ export default {
       accordions: [
         {
           title: "About Us",
-          text: "Queerean Voices is a grassroots community group that is dedicated to advancing the health and well-being of LGBTQ+ identifying Koreans in Toronto. Our membership includes LGBTQ+ Koreans and allies.",
+          text: "Queerean Voices is a grassroots community group that is dedicated to advancing the health and well-being of LGBTQ+ identifying Koreans in Toronto. This group was founded in May of 2018, and our membership includes LGBTQ+ Koreans and allies.",
           color: "#E82828",
           image: require("@/assets/about-us-image.svg")
         },
@@ -85,13 +103,26 @@ export default {
           ]
         },
         {
-          title: "Our Vision",
-          text: "We envision a Korean-Canadian identity that welcomes, celebrates and advocates for LGBTQ+ diversity and seeks to foster health and well-being within our intergenerational and diverse community in Canada.",
+          title: "Our Vision and Mission",
+          visionTitle: "Our Vision",
+          visionText: "We envision a Korean-Canadian identity that welcomes, celebrates and advocates for LGBTQ+ diversity and seeks to foster health and well-being within our intergenerational and diverse community in Canada.",
+          missionTitle: "Our Mission Statement",
+          missionText: "To create opportunities for community-building and leadership to support Korean LGBTQ+, their families and their allies in Canada.",
           color: "#0F9510"
         },
         {
-          title: "Our Mission Statement",
-          text: "To create opportunities for community-building and leadership to support Korean LGBTQ+, their families and their allies in Canada.",
+          title: "Our Objectives and Values",
+          content: {
+            objectives: [
+              "To be informed on the needs of LGBTQ KC youth and their parents.",
+              "To always consider safety for any participants involved in any of our activities.",
+              "To build a sense of community for LGBTQ KC, families, friends, supporters and allies.",
+              "To engage and share expertise/resources with community partner organizations within diverse communities (LGBTQ, KC, Asian, community groups, youth groups, etc.)"
+            ],
+            values: [
+              "Safety", "Inclusion", "Acceptance", "Empowerment", "Respect", "Courage", "Collaboration", "Freedom", "Solidarity", "Advocacy"
+            ],
+          },
           color: "#1EB7BF"
         },
         {
